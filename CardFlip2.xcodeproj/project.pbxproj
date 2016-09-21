@@ -343,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SCE65LPVPK;
 				INFOPLIST_FILE = CardFlip2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.elon.cs.mobile.CardFlip2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SCE65LPVPK;
 				INFOPLIST_FILE = CardFlip2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.elon.cs.mobile.CardFlip2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,6 +414,7 @@
 				297ADB471D89AEBA0000F92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		297ADB481D89AEBA0000F92A /* Build configuration list for PBXNativeTarget "CardFlip2Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +423,7 @@
 				297ADB4A1D89AEBA0000F92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

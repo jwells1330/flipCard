@@ -9,17 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var flipsLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var messageAreaLabel: UILabel!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func cardTap(_ sender: UITapGestureRecognizer) {
+        
+        let card = sender.view! as! UIImageView
+        
+        if card.image == #imageLiteral(resourceName: "back") {
+            card.image = #imageLiteral(resourceName: "ace_clubs")
+        } else {
+            card.image = #imageLiteral(resourceName: "back")
+        }
     }
-
-
 }
-
