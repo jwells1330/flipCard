@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var messageAreaLabel: UILabel!
 
+    var deck = Deck()
     
     override func viewDidLoad() {
         super.viewDidLoad()
