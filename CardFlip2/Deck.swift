@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/*
+ * Card: a single playing card
+ */
 class Card {
     var value: String
     var suit: String
@@ -27,6 +30,10 @@ class Card {
     }
 }
 
+
+/*
+ * values, suits: all possible combinations of suit/value
+ */
 let values = ["two", "three", "four", "five", "six",
               "seven", "eight", "nine", "ten", "jack",
               "queen", "king", "ace"]
@@ -34,12 +41,16 @@ let values = ["two", "three", "four", "five", "six",
 let suits = ["clubs", "diamonds"]
 
 
+/*
+ * Deck: a 52-card deck of playing cards
+ */
 class Deck {
     
     var deck: [Card] = []
     var inUse: [Bool] = []
     
     init() {
+        // create all of the cards
         for suit in suits {
             for value in values {
                 deck.append(Card(value, suit))
@@ -48,6 +59,7 @@ class Deck {
         }
     }
     
+    // randomly draw a card from the deck -- unique card
     func drawRandomCard() -> Card {
         var which = 0
         
@@ -59,16 +71,3 @@ class Deck {
         return deck[which]
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
