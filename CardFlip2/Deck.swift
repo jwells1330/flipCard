@@ -28,6 +28,14 @@ class Card {
         self.frontImage = UIImage(named: "\(value)_\(suit)")!
         self.text = "\(value) of \(suit)"
     }
+    
+    func getImage() -> UIImage {
+        if isShowing {
+            return frontImage
+        } else {
+            return backImage
+        }
+    }
 }
 
 
