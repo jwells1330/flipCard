@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // the Outlets
     @IBOutlet weak var flipsLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var messageAreaLabel: UILabel!
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     // create the Model
     var matchGame = MatchGame()
     
+    // array of Card images
     var imageViews: [UIImageView] = []
     
     override func viewDidLoad() {
@@ -43,17 +45,19 @@ class ViewController: UIViewController {
                       card3_1, card3_2, card3_3, card3_4,
                       card4_1, card4_2, card4_3, card4_4]
         
+        // set the welcome message
         messageAreaLabel.text = matchGame.message
     }
     
-    
+    // called with player taps any card
     @IBAction func cardTap(_ sender: UITapGestureRecognizer) {
         
+        // which UIImageView was tapped?
         let card = sender.view! as! UIImageView
     
         var which = -1
         
-        // which card was tapped?
+        // which card (in the array) was tapped?
         for i in 0..<imageViews.count {
             if imageViews[i] == card {
                 which = i
@@ -61,12 +65,15 @@ class ViewController: UIViewController {
         }
     
         if (which > -1) {
+            // tell the model which card to flip
             matchGame.flipCardUp(which)
             
+            // update the UIImageViews from the Model
             for i in 0..<imageViews.count {
                 imageViews[i].image = matchGame.getImage(i)
             }
             
+            // update the Labels from the Model
             flipsLabel.text = "Flips: \(matchGame.flips)"
             scoreLabel.text = "Score: \(matchGame.score)"
             messageAreaLabel.text = matchGame.message
@@ -74,11 +81,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
-
-
-
-
-
-

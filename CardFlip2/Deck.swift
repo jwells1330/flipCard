@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-/*
+/**
  * Card: a single playing card
  */
 class Card {
@@ -49,7 +49,7 @@ let values = ["two", "three", "four", "five", "six",
 let suits = ["clubs", "diamonds"]
 
 
-/*
+/**
  * Deck: a 52-card deck of playing cards
  */
 class Deck {
