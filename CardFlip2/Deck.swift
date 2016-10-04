@@ -36,6 +36,14 @@ class Card {
             return backImage
         }
     }
+    
+    func makeOpaque() -> UIImage{
+        let image = self.frontImage
+        let imageView = UIImageView(image: image)
+        imageView.alpha = 0.5
+        return image
+    
+    }
 }
 
 

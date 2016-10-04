@@ -32,7 +32,7 @@ class MatchGame {
     /*
      * Called when a card is tapped.
      */
-    func flipCardUp(_ which: Int) {
+    func flipCardUp(_ which: Int) -> Bool{
         
         // only need to do something if card is facing down
         if matrix[which].isShowing == false {
@@ -47,17 +47,43 @@ class MatchGame {
             
             
             if (previous != -1) {
-                
-                // ???logic for matching???
-                
-                // flip over the previous card
-                matrix[previous].isShowing = false
+                if(matrix[previous].suit == matrix[which].suit) {
+                    print("test suit")
+
+                    score += 5
+                    matrix[previous].isShowing = true
+
+                    
+                    let image = matrix[previous].makeOpaque()
+                    matrix[previous].frontImage = image
+                    
+                    previous = -1
+                    return true
+                }
+                else if (matrix[previous].value == matrix[which].value){
+                    print("test value")
+
+                    matrix[previous].isShowing = true;
+                    score += 17
+                    previous = -1
+                    return true
+                }
+                else{
+                    // flip over the previous card
+                    print("test no match")
+                    matrix[previous].isShowing = false
+                    matrix[which].isShowing = false
+                    
+                    previous = -1
+                    return false
+                }
             }
             
             // remember the last card tapped
             previous = which
+            
         }
-        
+        return false
     }
     
     /*

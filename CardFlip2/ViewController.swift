@@ -34,6 +34,9 @@ class ViewController: UIViewController {
     // create the Model
     var matchGame = MatchGame()
     
+    //
+    var previous = -1
+    
     // array of Card images
     var imageViews: [UIImageView] = []
     
@@ -56,18 +59,22 @@ class ViewController: UIViewController {
         let card = sender.view! as! UIImageView
     
         var which = -1
-        
         // which card (in the array) was tapped?
         for i in 0..<imageViews.count {
             if imageViews[i] == card {
                 which = i
             }
         }
-    
         if (which > -1) {
-            // tell the model which card to flip
-            matchGame.flipCardUp(which)
             
+            // tell the model which card to flip
+            let matched = matchGame.flipCardUp(which)
+            if(matched){
+                print("Matched")
+                print(previous)
+                imageViews[previous].alpha = 0.5
+                imageViews[which].alpha = 0.5
+            }
             // update the UIImageViews from the Model
             for i in 0..<imageViews.count {
                 imageViews[i].image = matchGame.getImage(i)
@@ -78,6 +85,8 @@ class ViewController: UIViewController {
             scoreLabel.text = "Score: \(matchGame.score)"
             messageAreaLabel.text = matchGame.message
             
+            //set prev to current for next flip
+            previous = which
         }
     }
 }
