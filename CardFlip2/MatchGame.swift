@@ -94,8 +94,7 @@ class MatchGame {
     }
     
     func turnDown(){
-        for int in 0...16{
-            print(int)
+        for int in 0...15{
             matrix[int].isShowing = false
         }
     }

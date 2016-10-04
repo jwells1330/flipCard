@@ -94,9 +94,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func playAgainButton(_ sender: UIButton) {
-        matchGame.turnDown()
         matchGame = MatchGame()
         viewDidLoad()
-        
     }
 }
