@@ -94,9 +94,9 @@ class MatchGame {
     }
     
     func turnDown(){
-        for image in matrix{
-            print("test")
-            image.isShowing = false
+        for int in 0...16{
+            print(int)
+            matrix[int].isShowing = false
         }
     }
     
