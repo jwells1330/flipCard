@@ -23,6 +23,8 @@ class MatchGame {
     var matrix: [Card] = []
     
     init() {
+        flips = 0
+        score = 0
         // draw 16 random cards
         for _ in 1...16 {
             matrix.append(deck.drawRandomCard())
@@ -42,37 +44,34 @@ class MatchGame {
             
             // update values/text
             flips += 1
-            score -= 1
             message = matrix[which].text
             
             
             if (previous != -1) {
                 if(matrix[previous].suit == matrix[which].suit) {
-                    print("test suit")
 
                     score += 5
                     matrix[previous].isShowing = true
-
-                    
-                    let image = matrix[previous].makeOpaque()
-                    matrix[previous].frontImage = image
                     
                     previous = -1
                     return true
                 }
                 else if (matrix[previous].value == matrix[which].value){
-                    print("test value")
 
+                    score += 16
                     matrix[previous].isShowing = true;
-                    score += 17
+                    
+                    
                     previous = -1
                     return true
                 }
                 else{
                     // flip over the previous card
-                    print("test no match")
+                    
+                    score -= 1
                     matrix[previous].isShowing = false
                     matrix[which].isShowing = false
+                    
                     
                     previous = -1
                     return false

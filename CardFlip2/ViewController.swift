@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var card4_3: UIImageView!
     @IBOutlet weak var card4_4: UIImageView!
 
+
     // create the Model
     var matchGame = MatchGame()
     
@@ -89,4 +90,6 @@ class ViewController: UIViewController {
             previous = which
         }
     }
+    @IBAction func playAgainButton(_ sender: UIButton) {
+        matchGame = MatchGame()    }
 }
