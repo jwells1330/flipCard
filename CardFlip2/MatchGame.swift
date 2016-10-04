@@ -50,7 +50,7 @@ class MatchGame {
             
             if (previous != -1) {
                 if(matrix[previous].suit == matrix[which].suit) {
-
+                    message = "Suit Match"
                     score += 5
                     matrix[previous].isShowing = true
                     
@@ -58,7 +58,7 @@ class MatchGame {
                     return true
                 }
                 else if (matrix[previous].value == matrix[which].value){
-
+                    message = "Value Match"
                     score += 16
                     matrix[previous].isShowing = true;
                     
