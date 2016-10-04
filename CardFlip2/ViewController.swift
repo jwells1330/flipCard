@@ -49,6 +49,9 @@ class ViewController: UIViewController {
                       card3_1, card3_2, card3_3, card3_4,
                       card4_1, card4_2, card4_3, card4_4]
         
+        for i in 0..<imageViews.count {
+            imageViews[i].alpha = 1
+        }
         // set the welcome message
         messageAreaLabel.text = matchGame.message
     }
@@ -91,5 +94,9 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func playAgainButton(_ sender: UIButton) {
-        matchGame = MatchGame()    }
+        matchGame.turnDown()
+        matchGame = MatchGame()
+        viewDidLoad()
+        
+    }
 }

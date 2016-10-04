@@ -23,6 +23,7 @@ class MatchGame {
     var matrix: [Card] = []
     
     init() {
+        print("test")
         flips = 0
         score = 0
         // draw 16 random cards
@@ -90,6 +91,13 @@ class MatchGame {
      */
     func getImage(_ which: Int) -> UIImage {
         return matrix[which].getImage()
+    }
+    
+    func turnDown(){
+        for image in matrix{
+            print("test")
+            image.isShowing = false
+        }
     }
     
     
