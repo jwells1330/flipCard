@@ -46,8 +46,8 @@ let values = ["two", "three", "four", "five", "six",
               "seven", "eight", "nine", "ten", "jack",
               "queen", "king", "ace"]
 
-let suits = ["clubs", "diamonds"]
 
+let suits = ["clubs", "diamonds", "hearts", "spades"]
 
 /**
  * Deck: a 52-card deck of playing cards
